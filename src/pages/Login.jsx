@@ -7,25 +7,31 @@ export default function Login(){
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
   const [error,setError] = useState('')
+  const [notification,setNotification] = useState('')
   const location = useLocation()
   const navigate = useNavigate()
   const { login } = useContext(UserContext)
-  const successMessage = location.state?.message || ''
+
+  React.useEffect(() => {
+    setNotification(location.state?.message || '')
+  }, [location.state])
 
   const handleSubmit = (e)=>{
     e.preventDefault()
     const result = login({email, password})
     if(!result.success){
       setError(result.message)
+      setNotification('')
       return
     }
     setError('')
+    setNotification('')
     navigate('/perfil')
   }
 
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{maxWidth:400}}>
-      {successMessage && <Alert severity="success" sx={{mb:2}}>{successMessage}</Alert>}
+      {notification && <Alert severity="success" sx={{mb:2}}>{notification}</Alert>}
       {error && <Alert severity="error" sx={{mb:2}}>{error}</Alert>}
       <TextField
         fullWidth

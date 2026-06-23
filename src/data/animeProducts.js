@@ -15,11 +15,11 @@ const animeProducts = [
     description: 'Una historia poética sobre la memoria, el amor y la fragilidad del mundo después de una catástrofe.'
   },
   {
-    title: 'Gundam 00 Trailblazer',
+    title: 'Gundam 00 A Awakening of the Trailblazer',
     key: 'gundam_00_trailblazer-C-sotOTx.jpg',
     genre: 'Mecha, Ciencia ficción',
     price: 52,
-    description: 'Los pilotos de Gundam luchan contra una amenaza espacial mientras defienden a la humanidad con tecnología avanzada.'
+    description: 'Los Gundam Maister luchan contra una amenaza espacial mientras defienden a la humanidad con tecnología avanzada.'
   },
   {
     title: 'Kimi no Na Wa',
